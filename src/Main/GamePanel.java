@@ -52,8 +52,27 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		
 	public void run() {
 		
+		init();
+		
+		
+		// game loop
+		while(running) {
+			
+			start = System.nanoTime();
+			
+			update();
+			draw();
+			drawToScreen();
+		
 	}
 	
+	private void update() {}
+	private void draw() {}
+	private void drawToScreen() {
+	    Graphics g2 = getGraphics();
+	    g2.drawImage(image, 0, 0, null);
+	    g2.dispose();
+	}		
 	public void keyTyped{KeyEvent key) {}
 	public void keyPressed{KeyEvent key) {}
 	public void keyReleased{KeyEvent key) {}
