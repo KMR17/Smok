@@ -26,11 +26,18 @@ public class GameStateManager {
   }
   
   public void update() {
-    gameStates.get (currentState) .update();
+    gameStates.get (currentState).update();
   }
   
   public void draw(java.awt.Graphics2D g) {
+    gameStated.get(currentState).draw(g);
     
+  }
+  public void keyPressed(int k) {
+    gameStated.get(currentState).keyPressed(k);
+  }
+  public void keyReleased(int k) {
+    gameStated.get(currentState).keyReleased(k);
   }
   
 }
