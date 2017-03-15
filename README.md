@@ -11,17 +11,17 @@ Założeniem projektu jest stworzenie gry platformowej napisana w języku Java. 
 
 Tydzień 1 - stworzenie projektu gry
 
-Tydzień 2 - stworzenie Menu gry wraz z funkcjami
+Tydzień 2 - stworzenie Menu gry
 
-Tydzień 3 - stworzenie szkieletu podstawowego gry
+Tydzień 3 - stworzenie podstawowych funkcji gry oraz pierwszego poziomu
 
-Tydzień 4 - Stworzenie pierwszych dwóch poziomów do gry
+Tydzień 4 - Stworzenie postacji, dodanie funkcji poruszanie. 
 
-Tydzień 5 - Dodanie funkcji
+Tydzień 5 - Dodanie przeciwników wraz z funkcją ich likwidowania
 
-Tydzień 6 - Dodanie i poprawa wizualna zarówno menu jak i samej gry
+Tydzień 6 - Optymalizacja gry, dodanie efektów dzwiękowych 
 
-Tydzień 7 - Naprawa błędów i zakończenie projektu
+Tydzień 7 - Naprawa błędów i dodanie dodatkowych funkcji np. zbierania dodatkowych punktów. 
 
 #### Wersja Java
    
