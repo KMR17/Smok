@@ -2,7 +2,7 @@
 
 #### O projekcie
 
-Założeniem projektu jest stworzenie gry platformowej napisana w języku Java. Gra będzie nosiła tytuł "Smoczyk"
+Założeniem projektu jest stworzenie gry platformowej napisana w języku Java. Gra będzie nosiła tytuł "Smok"
 
 #### Funkcje gry
  Gra zręcznościowa będzie polegać głównie na poruszaniu bohatera po wielu mniej lub bardziej urozmaiconych poziomach, często po wielopoziomowych platformach, unikaniu pułapek i likwidacji bądź unikaniu przeciwników, a także zbieraniu różnych nagród i dodatków
