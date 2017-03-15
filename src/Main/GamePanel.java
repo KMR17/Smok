@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 import javax.swing.JPanel;
 
-public class GamePanel extends JPanel { 
+public class GamePanel extends JPanel implements Runnable, KeyListener{ 
    // dimensions 
   public static final int WIDTH = 320;
 	public static final int HEIGHT = 240;
@@ -31,3 +31,31 @@ public class GamePanel extends JPanel {
 		requestFocus();
 	}
 	
+	public void addNotify() {
+		super.addNotify();
+		if(thread == null) {
+			thread = new Thread(this);
+			addKeyListener(this);
+			thread.start();
+		}
+	}
+	private void innit() {
+	
+	        image = new BufferedImage(
+			WIDTH, HEIGHT,
+			BufferedImage.TYPE_INT_RGB
+		);
+	  g = (Graphics2D) g;
+		running = treu
+	
+	}
+		
+	public void run() {
+		
+	}
+	
+	public void keyTyped{KeyEvent key) {}
+	public void keyPressed{KeyEvent key) {}
+	public void keyReleased{KeyEvent key) {}
+	
+}
