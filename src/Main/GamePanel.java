@@ -6,6 +6,8 @@ import java.awt.event.*;
 
 
 import javax.swing.JPanel;
+import GameState.GameStateManager;
+
 
 public class GamePanel extends JPanel implements Runnable, KeyListener{ 
    // dimensions 
@@ -22,6 +24,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
   // image
 	private BufferedImage image;
 	private Graphics2D g;
+	
+  // game state manager
+  private GameStateManager gsm;
+	
   
   public GamePanel() {
 		super();
@@ -47,6 +53,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		);
 	  g = (Graphics2D) g;
 		running = treu
+	
+		gsm = new GameStateManager();
 	
 	}
 		
@@ -83,14 +91,20 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	}
 	
 	private void update() {}
+	    gsm.update();
 	private void draw() {}
+	    gsm.draw(g);
 	private void drawToScreen() {
 	    Graphics g2 = getGraphics();
 	    g2.drawImage(image, 0, 0, null);
 	    g2.dispose();
 	}		
 	public void keyTyped{KeyEvent key) {}
-	public void keyPressed{KeyEvent key) {}
-	public void keyReleased{KeyEvent key) {}
+	public void keyPressed{KeyEvent key) {
+		gsm.keyPressed(key.getKeyCode());
+	}
+	public void keyReleased{KeyEvent key) {
+	        gsm.keyReleased(key.getKeyCode());
+	}
 	
 }
