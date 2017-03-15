@@ -142,4 +142,38 @@ public class TileMap {
 		if(y > ymax) y = ymax;	
 	}
 	
+	public void draw(Graphics2D g) {
+		
+		for(
+			int row = rowOffset;
+			row < rowOffset + numRowsToDraw;
+			row++) {
+			
+		if(row >= numRows) break;
+		
+		for(
+				int col = colOffset;
+				col < colOffset + numColsToDraw;
+				col++) {
+			
+			if(col >= numCols) break;
+			
+			if(map[row][col] == 0) continue;
+			
+			int rc = map[row][col];
+			int r = rc / numTilesAcross;
+			int c = rc % numTilesAcross;
+			
+			g.drawImage(
+				tiles[r][c].getImage(),
+				(int)x + col * tileSize,
+				(int)y + row * tileSize,
+				null
+				);
+			
+		}
+			
+	}
+
+   }		
 }
