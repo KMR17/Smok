@@ -109,4 +109,37 @@ public class TileMap {
     }
   
   }
+	
+	public int getTileSize() { return tileSize; }
+	public int getx() { return (int)x; }
+	public int gety() { return (int)y; }
+	public int getWidth() { return width; }
+	public int getHeight() { return height; }
+	
+	public int getType(int row, int col) {
+		int rc = map[row][col];
+		int r = rc / numTilesAcross;
+		int c = rc % numTilesAcross;
+		return tiles[r][c].getType();
+	}
+	
+	public void setPosition(double x, double y) {
+		
+		this.x += (x - this.x) * tween;
+		this.y += (y - this.y) * tween;
+		
+		fixBounds();
+		
+		colOffset = (int)-this.x / tileSize;
+		rowOffset = (int)-this.y / tileSize;
+		
+	}
+	
+	private void fixBounds(){
+	        if(x < xmin) x = xmin;
+		if(y < ymin) y = ymin;
+		if(x > xmax) x = xmax;
+		if(y > ymax) y = ymax;	
+	}
+	
 }
