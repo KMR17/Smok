@@ -1,32 +1,34 @@
 package Entity;
 
-import TileMap;
+import Main.GamePanel;
+import TileMap.TileMap;
+import TileMap.Tile;
 
 import java.awt.Rectangle;
 
 public abstract class MapObject {
- 
-  //tile stuff
-       protected TileMap tileMap;
-       protected int tileSize;
-       protected double xmap;
-       protected double ymap;
-  
-  // position and vector 
-        protected double x;
-        protected double y;
-        protected double dx;
-        protected double dy;
-  
-  // dimensions
-        protected int width;
-        protected int height;
- 
-  // collision box
-        protected int cwidth;
-        protected int cheight;
-  
-  // collision
+	
+	// tile stuff
+	protected TileMap tileMap;
+	protected int tileSize;
+	protected double xmap;
+	protected double ymap;
+	
+	// position and vector
+	protected double x;
+	protected double y;
+	protected double dx;
+	protected double dy;
+	
+	// dimensions
+	protected int width;
+	protected int height;
+	
+	// collision box
+	protected int cwidth;
+	protected int cheight;
+	
+	// collision
 	protected int currRow;
 	protected int currCol;
 	protected double xdest;
@@ -37,8 +39,8 @@ public abstract class MapObject {
 	protected boolean topRight;
 	protected boolean bottomLeft;
 	protected boolean bottomRight;
-  
-  // animation
+	
+	// animation
 	protected Animation animation;
 	protected int currentAction;
 	protected int previousAction;
@@ -72,6 +74,7 @@ public abstract class MapObject {
 		Rectangle r2 = o.getRectangle();
 		return r1.intersects(r2);
 	}
+	
 	public Rectangle getRectangle() {
 		return new Rectangle(
 				(int)x - cwidth,
@@ -110,8 +113,8 @@ public abstract class MapObject {
 		
 		xtemp = x;
 		ytemp = y;
-	
-                calculateCorners(x, ydest);
+		
+		calculateCorners(x, ydest);
 		if(dy < 0) {
 			if(topLeft || topRight) {
 				dy = 0;
@@ -121,7 +124,6 @@ public abstract class MapObject {
 				ytemp += dy;
 			}
 		}
-		
 		if(dy > 0) {
 			if(bottomLeft || bottomRight) {
 				dy = 0;
@@ -196,5 +198,41 @@ public abstract class MapObject {
 			y + ymap - height > GamePanel.HEIGHT;
 	}
 	
+	public void draw(java.awt.Graphics2D g) {
+		if(facingRight) {
+			g.drawImage(
+				animation.getImage(),
+				(int)(x + xmap - width / 2),
+				(int)(y + ymap - height / 2),
+				null
+			);
+		}
+		else {
+			g.drawImage(
+				animation.getImage(),
+				(int)(x + xmap - width / 2 + width),
+				(int)(y + ymap - height / 2),
+				-width,
+				height,
+				null
+			);
+		}
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
