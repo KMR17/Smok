@@ -6,11 +6,16 @@ import Entity.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class Level1State extends GameState {
   
   private TileMap tilemap;
   private Background bg;
+	
+ private Player player;
+ 
+ private ArrayList<Enemy> enemies;
   
   public Level1State(GameStateManager gsm) {
     this.gsm = gsm;
